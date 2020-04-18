@@ -1,11 +1,15 @@
 package tests;
 
 import base.BasePage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.sql.*;
 
 public class TestCases extends BasePage {
+
+        String userName = "cemal";
+        String surName = "yaver";
 
         @Test
         public void testDb() {
@@ -16,9 +20,11 @@ public class TestCases extends BasePage {
 
             while(rs.next()) {
                 int Id= rs.getInt("id");
-                String UserName= rs.getString("name");
-                String SurName=rs.getString("surname");
-                System.out.println(Id + " " + UserName + " " + SurName + " ");
+                String getUserName = rs.getString("name");
+                String getSurName = rs.getString("surname");
+                Assert.assertEquals(getUserName, userName, "userName incorrect");
+                Assert.assertEquals(getSurName, surName, "surName incorrect");
+                System.out.println(Id + " " + userName + " " + surName + " ");
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
