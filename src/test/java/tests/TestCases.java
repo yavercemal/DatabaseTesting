@@ -8,9 +8,6 @@ import java.sql.*;
 
 public class TestCases extends BasePage {
 
-        String userName = "cemal";
-        String surName = "yaver";
-
         @Test
         public void testDb() {
         try {

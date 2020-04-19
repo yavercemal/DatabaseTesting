@@ -7,6 +7,9 @@ import java.sql.*;
 
 public class BasePage {
 
+    public String userName = "cemal";
+    public String surName = "yaver";
+
     public Connection connection;
     public static Statement statement;
     public static ResultSet rs;
